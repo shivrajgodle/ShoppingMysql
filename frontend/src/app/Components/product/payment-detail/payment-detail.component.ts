@@ -100,8 +100,8 @@ export class PaymentDetailComponent implements OnInit {
 
     Swal.fire('Done', 'Payment done successfully, You can view your Order by clicking on My Order', 'success');
 
-    this.service.deleteMyCart(this.userId);
-
+//    this.service.deleteMyCart(this.userId);
+this.service.deleteMyCartData();
     this.router.navigate(['/product/home']);
 
   }
@@ -116,6 +116,9 @@ export class PaymentDetailComponent implements OnInit {
 
       //calling service to store data at backend
       this.service.PostOrderData(this.datas).subscribe(result => {
+
+        console.log("lode lag gaye",this.datas);
+        
       },
         (error) => {
           alert("something went wrong...");
@@ -123,7 +126,7 @@ export class PaymentDetailComponent implements OnInit {
     }
 
     //it will delete all cart data after placing order
-    this.service.deleteMyCart(this.userId).subscribe(data => {
+    this.service.deleteMyCartData().subscribe(data => {
     });
   }
 

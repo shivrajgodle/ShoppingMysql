@@ -31,4 +31,6 @@ public interface UserService {
 	public void clearCart(String uid);
 
 	public List<Order1> getOrderDetails(String uid);
+	
+	public void deleteCart();
 }

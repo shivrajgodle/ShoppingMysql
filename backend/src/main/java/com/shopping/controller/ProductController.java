@@ -87,6 +87,11 @@ public class ProductController {
 		return service.getOrderDetails(uid);
 	}
 	
-	
+	@DeleteMapping("/deleteCart")
+	public void deleteCart()
+	{
+		System.out.println("delete cart");
+		service.deleteCart();
+	}
 
 }

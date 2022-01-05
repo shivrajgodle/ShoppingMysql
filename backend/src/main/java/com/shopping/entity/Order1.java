@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import org.springframework.data.annotation.Transient;
+
 
 @Entity
 public class Order1 {
@@ -20,29 +20,28 @@ public class Order1 {
 	private int GrandTotal;
 	
 	
-	@Transient
-	public static final String SEQUENCE_NAME = "user_sequence";
-	
-	
-	
 	public Order1() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-	
-	public Order1(String productName, String price, String uid, Long date, int grandTotal) {
+	public Order1(int id, String productName, String price, String uid, Long date, int grandTotal) {
 		super();
+		this.id = id;
 		this.productName = productName;
 		this.price = price;
 		this.uid = uid;
 		this.date = date;
 		GrandTotal = grandTotal;
 	}
-
-
-
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getProductName() {
 		return productName;
 	}
@@ -72,8 +71,5 @@ public class Order1 {
 	}
 	public void setGrandTotal(int grandTotal) {
 		GrandTotal = grandTotal;
-	}
-	
-	
-	
+	}	
 }

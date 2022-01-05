@@ -112,6 +112,12 @@ public class ServiceImpl implements UserService {
 //	public void clearCart(int id) {
 //		cartRepo.deleteById(id);
 //	}
+	
+	
+	public void deleteCart(){
+		cartRepo.deleteAll();
+		//return "done...!!";
+	}
 }
 
 

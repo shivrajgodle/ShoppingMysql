@@ -65,7 +65,7 @@ export class MyOrderComponent implements OnInit,AfterViewInit {
       this.dataSource.data = this.newOrder;
     })
 
-    this.service.deleteMyCart(this.userId);
+    this.service.deleteMyCartData();
   }
 
 

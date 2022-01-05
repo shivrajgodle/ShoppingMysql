@@ -92,15 +92,22 @@ export class ServiceService {
   }
 
 
-  deleteMyCart(uid: string) {
-    //calling backed API
-    return this.http.delete(`${environment.baseUrl}/product/clearCart/${uid}`);
-  }
+  // deleteMyCart(uid: string) {
+  //   //calling backed API
+  //   return this.http.delete(`${environment.baseUrl}/product/clearCart/${uid}`);
+  // }
 
   getOrderDetails(uid: string) {
     //calling backed API
     return this.http.get<MyOrderData>(`${environment.baseUrl}/product/getOrderDetails/${uid}`);
 
+  }
+
+  deleteMyCartData()
+  {
+    console.log("delete cart");
+    
+    return this.http.delete(`${environment.baseUrl}/product/deleteCart`);
   }
 
 }
